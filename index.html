@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kepler Event Registration Form</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                list-style: none;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+                height: 100vh;
+                background-color: #f2f2f2;
+            }
+
+            nav {
+                background: #FFFFFF;
+                height: 80px;
+                width: 100%;
+            }
+
+            label.site-name {
+                color: #0E4D72;
+                font-size: 35px;
+                line-height: 80px;
+                padding: 0 100px;
+                font-weight: bold;
+            }
+
+            nav ul {
+                float: right;
+                margin-right: 20px;
+            }
+
+            nav ul li {
+                display: inline-block;
+                line-height: 80px;
+                margin: 0 5px;
+            }
+
+            nav ul li a{
+                color: #0E4D72;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 20px;
+                text-transform: uppercase;
+                transition: background-color 0.5s, color 0.5s;
+            }
+
+            a.active,a:hover {
+                background-color: #0E4D72;
+                color: #FFFFFF;
+                border-radius: 20px;
+                transition: 0.5s;
+            }
+
+            #form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            form {
+                background-color: #0E4D72;
+                width: 600px;
+                border-radius: 10px;
+                padding: 20px;
+            }
+
+            h1 {
+                color: #FFFFFF;
+                text-align: center;
+            }
+
+            p {
+                color: #FFFFFF;
+                text-align: center;
+                margin: 20px;
+            }
+
+            label {
+                color: #FFFFFF;
+                font-weight: bold;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"], select, textarea {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+
+            input[type="radio"] {
+                margin-right: 10px;
+                margin-left: 10px;
+                padding-left: 35px;
+                margin: 10px;
+                margin-bottom: 15px;
+            }
+
+            button {
+                background-color: #41B35D;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                width: calc(100% - 22px);
+            }
+
+            button:hover {
+                background-color: black;
+            }
+
+            .checkbtn {
+                font-size: 30px;
+                color: #0E4D72;
+                float: right;
+                line-height: 80px;
+                margin-right: 40px;
+                cursor: pointer;
+                display: none;
+            }
+
+            #check {
+                display: none;
+            }
+
+            footer {
+                background-color: #0E4D72;
+                color: white;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                padding: 20px 0;
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .social-icon {
+                color: white;
+                margin: 0 10px;
+                font-size: 24px;
+            }
+
+            .social-icon:hover {
+                color: #41B35D;
+            }
+
+
+            .gallery-link {
+                color: white;
+                margin-right: 10px;
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+
+            @media (max-width: 952px) {
+                label.site-name {
+                    font-size: 30px;
+                    padding-left: 50px;
+                }
+
+                nav ul li a {
+                    font-size: 16px;
+                    transition: background-color 0.5s, color 0.5s;
+                }
+            }
+
+            @media (max-width: 858px) {
+                .checkbtn {
+                    display: block;
+                }
+                ul {
+                    position: fixed;
+                    width: 100%;
+                    height: 100vh;
+                    background: #0E4D72;
+                    top: 80px;
+                    left: -100%;
+                    text-align: center;
+                    transition: all 0.5s;
+                }
+
+                nav ul li {
+                    display: block;
+                    margin: 50px 0;
+                    line-height: 30px;
+                }
+
+                nav ul li a {
+                    font-size: 20px;
+                    color: #FFFFFF;
+                    transition: background-color 0.5s, color 0.5s;
+                }
+
+                a:hover,a.active {
+                    background-color: #FFFFFF;
+                    color: #0E4D72;
+                }
+
+                #check:checked ~ ul {
+                    left: 0;
+                }
+            }
+        </style>
+    </head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="site-name">Neelam Online Shop</label>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about-us.html">About Author</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+        <div id="form">
+            <form class="form-content">
+                <h1>Kepler Event Registration Form</h1>
+                <p>Please fill out the form below to register.</p>
+                <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Enter your first name">
+                <br>
+                <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Enter your last name">
+                <br>
+                <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <br>
+                <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                <br>
+                <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <br>
+                <label for="reg_number">Registration Number:</label>
+                    <input type="text" id="regnum" name="regnum" placeholder="Enter your registration number">
+                <br>
+                <label for="event">Event Name:</label>
+                    <select id="event" name="event">
+                        <option value="success_week">Kepler Success Week</option>
+                        <option value="heroes_day">Heroes Day Celebration</option>
+                        <option value="women_day">Women's Day Celebration</option>
+                    </select>
+                <br>
+                <label for="reason">Reason for Attendance:</label>
+                <br>
+                    <textarea id="reason" name="reason" placeholder="Enter your reason for attendance"></textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <a href="https://youtube.com/shorts/Os3nkm6r7Wc" class="gallery-link" target="_blank"><i class="fa fa-image" style="font-size: 20px;"></i> My Gallery</a>
+                <div>
+                    <a href="https://www.instagram.com" class="social-icon"><i class="fa fa-instagram" style="font-size: 25px;"></i></a>
+                    <a href="https://www.x.com" class="social-icon"><i class="fa fa-twitter" style="font-size: 25px;"></i></a>
+                    <a href="https://www.facebook.com" class="social-icon"><i class="fa fa-facebook" style="font-size: 25px;"></i></a>
+            </div>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>contact us form </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+
+		*{
+			padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+		body {
+			font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            }
+
+		.container {
+			width: 80%;
+			padding-top: 20px;
+        	margin: auto;
+       	 	display: flex;
+        	justify-content: space-between;
+        	background-color: #FFFFFF;
+        	border-radius: 10px;
+        	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+		}
+		.section-1 {
+			background-color: #0E4D72;
+			padding: 20px;
+			color: white;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.section-2 {
+			background-color: #FFFFFF;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 400px;
+			padding-top: 10%;
+		}
+
+		.section-2 .address {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding-top: 100px;
+		}
+		.form {
+			max-width: 400px;
+			margin: auto;
+		}
+		input[type="text"],
+		input[type="email"],
+		textarea {
+			width: calc(100% - 22px);
+			padding: 10px;
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #41B35D;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+			width: 100%;
+		}
+		input[type="submit"]:hover {
+			background-color: black;
+		}
+
+		nav {
+			background: #FFFFFF;
+			height: 80px;
+			width: 100%;
+			position: fixed;
+            top: 0;
+            z-index: 999;
+		}
+
+		label.site-name {
+			color: #0E4D72;
+			font-size: 35px;
+			line-height: 80px;
+			padding: 0 100px;
+			font-weight: bold;
+		}
+
+		nav ul {
+			float: right;
+			margin-right: 20px;
+			justify-content: space-between;
+            flex-grow: 1;
+			list-style: none;
+			;
+		}
+
+		nav ul li {
+			display: inline-block;
+			line-height: 80px;
+			margin: 0 5px;
+		}
+
+		nav ul li a {
+			color: #0E4D72;
+			font-size: 17px;
+			padding: 7px 13px;
+			border-radius: 20px;
+			text-transform: uppercase;
+			text-decoration: none;
+            transition: background-color 0.5s, color 0.5s;
+		}
+
+		a.active, a:hover {
+			background-color: #0E4D72;
+			color: #FFFFFF;
+			border-radius: 20px;
+			transition: 0.5s;
+		}
+
+		.checkbtn {
+			font-size: 30px;
+			color: #0E4D72;
+			float: right;
+			line-height: 80px;
+			margin-right: 40px;
+			cursor: pointer;
+			display: none;
+		}
+
+		#check {
+			display: none;
+		}
+
+		@media (max-width: 858px) {
+			.checkbtn {
+				display: block;
+			}
+
+			ul {
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				background: #0E4D72;
+				top: 80px;
+				left: -100%;
+				text-align: center;
+				transition: all 0.5s;
+			}
+
+			nav ul li {
+				display: block;
+				margin: 50px 0;
+				line-height: 30px;
+			}
+
+			nav ul li a {
+				font-size: 20px;
+				color: #FFFFFF;
+				transition: background-color 0.5s, color 0.5s;
+			}
+
+			a:hover, a.active {
+				background-color: #FFFFFF;
+				color: #0E4D72;
+			}
+
+			#check:checked ~ ul {
+				left: 0;
+			}
+		}
+
+		footer {
+            background-color: #0E4D72;
+            color: white;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-icon {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        .social-icon:hover {
+            color: #41B35D;
+        }
+
+
+        .gallery-link {
+            color: white;
+            margin-right: 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+
+	</style>
+
+</head>
+<body>
+
+	<nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="site-name">Neelam Online Shop</label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Author</a></li>
+            <li><a class="active" href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+	<div class="container">
+		<div class="section-1">
+			<div class="header">
+				<h2>Contact Us</h2>
+			</div>
+			<div class="form">
+				<form>
+					<p class="input-1">
+						<label>
+							Your Name
+
+							<br>
+							<span>
+							<input type="text" name="your-name" value size="40" required="true">
+						</span>
+						</label>
+
+					</p>
+					<p class="input-2">
+						<label>
+							Your Email
+
+							<br>
+							<span>
+							<input type="email" name="your-email" value size="40" required="true">
+						</span>
+						</label>
+
+					</p>
+					<p class="input-3">
+						<label>
+							Subject
+
+							<br>
+							<span>
+							<input type="text" name="your-subject" value size="40" required="true">
+						</span>
+						</label>
+
+					</p>
+					<p class="input-4">
+
+						<label>
+							Your Message
+
+							<br>
+							<span>
+							<textarea cols="40" rows="10" name="your-message" value size="40"></textarea>
+						</span>
+						</label>
+
+					</p>
+					<p class="submit">
+
+						<label>
+							<input type="submit" value="submit">
+						</label>
+
+					</p>
+				</form>
+			</div>
+		</div>
+		<div class="section-2">
+			<h4 class="element-1">
+				<strong>ADMISSIONS:</strong>
+			</h4>
+			<p class="element-1-p">admissions@keplercollege.ac.rw</p>
+			<h4 class="element-2">
+				<strong>EMPLOYERS:</strong>
+			</h4>
+			<p class="element-2-p">careers@keplercollege.ac.rw</p>
+			<h4 class="element-3">
+				<strong>General INQUIRIES:</strong>
+			</h4>
+			<p class="element-3-p">info@keplercollege.ac.rw</p>
+			<h4 class="element-4">
+				<strong>ADDRESS:</strong>
+			</h4>
+			<p class="element-4-p-1">KG 29 Ave 16</p>
+			<p class="element-4-p-2">Kigali, Rwanda</p>
+			<p class="element-4-p-3">(+250)784352322</p>
+		</div>
+	</div>
+
+	<footer>
+        <div class="footer-content">
+            <a href="https://youtube.com/shorts/Os3nkm6r7Wc" class="gallery-link" target="_blank"><i class="fa fa-image" style="font-size: 20px;"></i> My Gallery</a>
+            <div>
+                <a href="https://www.instagram.com" class="social-icon"><i class="fa fa-instagram" style="font-size: 25px;"></i></a>
+                <a href="https://www.x.com" class="social-icon"><i class="fa fa-twitter" style="font-size: 25px;"></i></a>
+                <a href="https://www.facebook.com" class="social-icon"><i class="fa fa-facebook" style="font-size: 25px;"></i></a>
+        </div>
+    </footer>
+
+
+</body>
+</html>
